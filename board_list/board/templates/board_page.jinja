@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/static/css/boardpage.css" rel="stylesheet">
+    <link href="/static/css/header.css" rel="stylesheet">
+    <link href="/static/css/footer.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav>
+            <ul id="menu">
+                <li><a href="/board/board-list/" class="menu-link">Главная</a></li>
+                <li><a href="/accounts/login" class="menu-link">Вход</a> </li>
+                <li><a href="/admin/" class="menu-link">Админ-панель</a></li>
+                <li><a href="/cart/" class="menu-link">Корзина</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="content">
+        <div id="name"><h1>{{ product_data.item.title }}</h1></div>
+        <div id="prod">
+        <div id="pic"><img src="/{{product_data.item.image}}"></div>
+        <div id="about">
+            <ul id="feature">
+                <li><p class="font-style">Цена  -</p></li>
+                <li><p id="price">{{ product_data.item.price }}₽</p></li>
+            </ul>
+            <div id="description">Описание: {{ product_data.item.description }}</div>
+            <div>
+                <div id="addToCart">
+                    <button id="toCart" product-id={{ product_data.item.id }}>В корзину</button>
+                </div>
+                <div id="goToCart">
+                    <a href="/cart/">
+                        <div>
+                            <p>Перейти в корзину</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {# {% block script %}
+        {% include "scriptversion.jinja" %}
+    {% endblock %} #}
+    <script src="/static/js/jquery-3.6.0.min.js"></script>
+    <script src="/static/js/appcartjs/addtocart.js"></script>
+</body>
+</html>

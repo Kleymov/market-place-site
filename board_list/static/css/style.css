@@ -1,0 +1,144 @@
+body{
+    background: white;
+    margin: 0;
+}
+* {
+    cursor: url('/static/image/курсор.png');
+}
+
+li{
+    color: black;
+    list-style: none;
+}
+.board-list{
+    width: 1500px;
+    height: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    padding: 0;
+    margin: 120px auto;
+}
+.board{
+    width: 200px;
+    height: 300px;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 0 7px -2px rgba(122,122,122,0.2);
+    margin: 25px;
+    
+    cursor: pointer;
+    /* background-color: rgba(255, 174, 0, 0.884); */
+    background-color: white;
+
+    
+}
+.about-product{
+    margin: 5px 0 0 20px;
+}
+.about-product h1, p{
+    margin: 0;
+}
+.product-image{
+    margin: 10px auto;
+    width: 140px;
+    height: 200px;
+}
+.product-image img{
+    border-radius: 20px;
+}
+.product-link{
+    display: block;
+    height: 100%;
+    color: #707f8d;
+    text-decoration: none;
+}
+.board img {
+    width: 135px;
+    height: 150px;
+
+    padding: 10px 0 10px 0;
+}
+
+.product-info{
+    display: flex;
+}
+.product-price, .currency, .product-name{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+}
+.product-price{
+    font-size: 25px;
+}
+.currency{
+    font-size: 19px;
+}
+
+.swiper-container{
+    margin-top: 40px;
+    width: 100%;
+    /* height: 100%; */
+    user-select: none;
+}
+.swiper-slide{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+.swiper-slide img{
+    object-fit: cover;
+    width: 1450px;
+    height: 380px;
+    border-radius: 50px;
+}
+.swiper-pagination{
+    bottom: auto !important;
+    margin-top: 10px;
+}
+.swiper-pagination-bullet{
+    width: 10px;
+    height: 10px;
+}
+:root{
+    --swiper-theme-color: rgb(9, 185, 156);
+    --swiper-navigation-size: 30px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 40px;
+  height: 40px;
+  background: rgb(211, 210, 210);
+  position: absolute;
+  top: 35%;
+  transform: translateY(-50%);
+  border-radius: 60px;
+  z-index: 9999;
+  opacity: 0.3;
+}
+.swiper-button-prev {
+  left: 225px;
+}
+.swiper-button-next {
+  right: 225px;
+}
+.swiper-button-next:hover{
+    background: rgb(255, 255, 255);
+    opacity: 0.6;
+}
+.swiper-button-prev:hover{
+    background: rgb(255, 255, 255);
+    opacity: 0.6;
+}
+
+
+.footer-container{
+    height: 320px;
+    background-color:rgb(36, 35, 35);
+}
+img{
+    object-fit: cover;
+}

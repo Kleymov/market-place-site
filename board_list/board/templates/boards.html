@@ -1,0 +1,20 @@
+{% extends 'base/base.html' %}
+{% block content %}
+    <div >
+      <ul class="board-list">
+        {% for item in items %}
+          <li class="board">
+            <a href="/board/board-list/board-page/{{item.slug}}" class="product-link">
+              <div class="product-image">
+                <img src="/{{item.image}}" alt="Изображение отсутствует">
+              </div>
+              <div class="about-product">
+                <h1><span class="product-price">{{ item.price }} </span><span class="currency">₽</span></h1>
+                <p><span class="product-name">{{ item.title }}</span></p>
+              </div>   
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>     
+{% endblock content %}

@@ -1,0 +1,75 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv='cache-control' content='no-cache'>
+    <meta http-equiv='expires' content='0'>
+    <meta http-equiv='pragma' content='no-cache'>
+
+    <title>Аvито</title>
+    <link href="/static/css/style.css" rel="stylesheet">
+    <link href="/static/css/cartstyle.css" rel="stylesheet">
+    <link href="/static/css/header.css" rel="stylesheet">
+</head>
+    <header class="header">
+        <nav>
+            <ul id="menu">
+                <li><a href="/board/board-list/" class="menu-link">Главная</a></li>
+                <li><a href="/accounts/login" class="menu-link">Вход</a> </li>
+                <li><a href="/admin/" class="menu-link">Админ-панель</a></li>
+            </ul>
+        </nav>
+    </header>
+    <form id="cart">
+        <div class="cart-content">
+            <div>
+                <h2>Корзина</h2>
+            </div>
+            {% if products != {} %}
+                <div class="cart-check">
+                    <input type="checkbox" id="allCheck" checked>
+                    <label for="allCheck">Выбрать все товары</label>
+                </div>
+                <ul id="productInCart">
+                    {% for key, value in products.items() %}
+                        <div class="product">
+                            <ul class="product-info">
+                                <li class="check-block"><input type="checkbox" class="product-check" checked></li>
+                                <li class="image-block"><a href="/board/board-list/board-page/{{ key.slug }}/"><image src="/{{ key.image }}" class="product-image"></a></li>
+                                <li class="name-block"><a href="/board/board-list/board-page/{{ key.slug }}/"><span class="product-name">{{ key.title }}</span></a></li>
+                                <li class="qua-block">
+                                    <div class="quantity-block">
+                                        <button class="minus">-</button>
+                                        <input class="quantity" value="{{ value }}" min=1 product-id="{{ key.id }}">
+                                        <button class="plus">+</button>
+                                    </div>
+                                </li>
+                                <li class="price-block">
+                                    <div class="price-and-delete">
+                                        <p><span class="price">{{ key.price }}</span>₽</p>
+                                        <button class="delete-from-cart" product-id="{{ key.id }}">Удалить</button>                                    
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    {% endfor %}    
+                </ul>
+            {% else %}
+                <div id="emptyCart">
+                    <h3>Корзина пуста</h3>            
+                </div>
+            {% endif %}
+        </div>
+        <div class="cart-sidebar">
+            <div id="information">
+                <p id="about">Товары, <span id="totalQuantity"></span> шт</p>
+                <p id="result">Итого: <span id="totalPrice"></span> ₽</p>
+            </div>
+            <div id="getOrder">
+                <button>Заказать</button>
+            </div>
+        </div>
+    </form>
+<script src="/static/js/jquery-3.6.0.min.js"></script>
+<script src="/static/js/appcartjs/cartview.js"></script>
+<script src="/static/js/appcartjs/cart.js"></script>
+

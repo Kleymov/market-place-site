@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Аvито</title>
+    {% block description %}
+    {% endblock description %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    <link href="/static/css/style.css" rel="stylesheet">
+    <link href="/static/css/header.css" rel="stylesheet">
+    <link href="/static/css/categories.css" rel="stylesheet">
+    <link href="/static/css/footer.css" rel="stylesheet">
+</head>
+<body>
+   
+    <header class="header">
+        <nav>
+            <ul id="menu">
+                <li><a href="/board/board-list/" class="menu-link">Главная</a></li>
+                <li><button id="showCategory" >Категории</button></li>
+                <li><a href="/accounts/login" class="menu-link">Вход</a> </li>
+                <li><a href="/admin/" class="menu-link">Админ-панель</a></li>
+                <li><a href="/cart/" class="menu-link">Корзина</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="categories">
+        <div class="category-menu-1"> 
+            <ul>    
+                <li><a href="/board/categories/strojmaterialy">Стройматериалы</a></li>
+                <li><a href="/board/categories/eda">Еда</a></li>
+                <li><a href="/board/categories/odezhda">Одежда</a></li>
+                <li><a href="/board/categories/tehnika">Техника</a></li>
+                <li><a href="/board/categories/kancotovary">Канцтовары</a></li>
+                <li><a href="/board/categories/knigi">Книги</a></li>
+            </ul>
+        </div>
+        <div class="category-menu-2"> 
+            <ul>    
+                <li><a href="/board/categories/mashiny">Машины</a></li>
+                <li><a href="/board/categories/igrushki">Игрушки</a></li>
+                <li><a href="/board/categories/instrumenty">Инструменты</a></li>
+                <li><a href="/board/categories/mebel">Мебель</a></li>
+                <li><a href="/board/categories/cvety">Цветы</a></li>
+            </ul>
+        </div>
+        <h3 id="exitFromCategory">X</h3>
+    </div> 
+    <div class="image-slider swiper-container">
+        <div class="image-slider__wrapper swiper-wrapper">
+            <div class="image-slider__slide swiper-slide"><img src="/static/image/6.jpeg"></div>
+            <div class="image-slider__slide swiper-slide"><img src="/static/image/13.jpeg"></div>
+            <div class="image-slider__slide swiper-slide"><img src="/static/image/14.jpeg"></div>
+            <div class="image-slider__slide swiper-slide"><img src="/static/image/4.jpeg"></div>
+            <div class="image-slider__slide swiper-slide"><img src="/static/image/2.jpeg"></div>
+        </div>
+        <div class="swiper-button-prev"></div>       
+        <div class="swiper-button-next"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+   
+
+    <main class="container">
+        {% block content %}
+            
+        {% endblock content %}
+        {% block scripts %}
+
+        {% endblock scripts %}
+    </main>
+
+    <footer class="footer-container">
+        <div>
+            <ul>
+                <li><a>Ссылка на информацию</a></li>
+                <li><a>Ссылка на информацию</a></li>
+                <li><a>Ссылка на информацию</a></li>
+                <li><a>Ссылка на информацию</a></li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li><a>Ссылка на информацию</a></li>
+                <li><a>Ссылка на информацию</a></li>
+                <li><a>Ссылка на информацию</a></li>
+                <li><a>Ссылка на информацию</a></li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li><a>Ссылка на информацию</a></li>
+                <li><a>Ссылка на информацию</a></li>
+                <li><a>Ссылка на информацию</a></li>
+                <li><a>Ссылка на информацию</a></li>
+            </ul>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="/static/js/jquery-3.6.0.min.js"></script>
+    <script src="/static/js/header.js"></script>
+    <script src="/static/js/script.js"></script>
+    
+    {% block footer %}
+    {% endblock footer %}
+    {% csrf_token %}
+</body>

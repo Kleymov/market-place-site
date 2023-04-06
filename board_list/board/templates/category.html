@@ -1,0 +1,34 @@
+<link href="/static/css/style.css" rel="stylesheet">
+<link href="/static/css/header.css" rel="stylesheet">
+
+<header class="header">
+    <nav>
+        <ul id="menu">
+            <li><a href="/board/board-list/" class="menu-link">Главная</a></li>
+            <li><a href="/accounts/login" class="menu-link">Вход</a> </li>
+            <li><a href="/admin/" class="menu-link">Админ-панель</a></li>
+            <li><a href="/cart/" class="menu-link">Корзина</a></li>
+        </ul>
+    </nav>
+</header>
+<div >
+    <ul class="board-list">
+        {% for product in products %}
+          <li class="board">
+                <a href="/board/board-list/board-page/{{product.slug}}" class="product-link">
+                    <div class="product-image">
+                        <img src="/{{product.image}}" alt="Изображение отсутствует">
+                    </div>
+                    <div class="about-product">
+                        <h1><span class="product-price">{{ product.price }} </span><span class="currency">₽</span></h1>
+                        <p><span class="product-name">{{ product.title }}</span></p>
+                    </div>   
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>   
+
+<footer class="footer-container">
+
+</footer>

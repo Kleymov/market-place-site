@@ -1,0 +1,14 @@
+.footer-container{
+    display: flex;
+    justify-content: center;
+}
+.footer-container a{
+    color: whitesmoke;
+    cursor: pointer;
+}
+.footer-container div{
+    margin: 0 100px 0 100px;
+}
+.footer-container li{
+    padding: 25px;
+}
